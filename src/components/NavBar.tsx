@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { Button } from './ui/button'
 import { ShoppingBag } from 'lucide-react'
 import { useShoppingCart } from 'use-shopping-cart'
+import Image from 'next/image'
 
 const links = [
     {
@@ -31,8 +32,9 @@ const NavBar = () => {
     return (
         <header className='w-full mb-8 border-b'>
             <div className='flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl'>
-                <Link href={"/"}>
-                    <h1 className='text-2xl md:text-4xl font-bold'>Swift <span className='text-primary'>Deal</span></h1>
+                <Link href={"/"} className='flex items-center '>
+                    <Image className='h-10 w-10' alt='logo' width={500} height={500} src={'/log-s-d.png'}/>
+                    <h1 className='text-2xl font-bold'>Swift <span className='text-primary'>Deal</span></h1>
                 </Link>
                 <nav className='hidden lg:flex gap-12'>
                     {links.map((link) => (
